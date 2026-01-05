@@ -3,7 +3,7 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: Jennifer Pearson, LMSW # Website name
+title: Jennifer Pearson, LCSW # Website name
 baseURL: 'https://jenniferpearsonlmsw.com/' # Website URL
 
 ############################
