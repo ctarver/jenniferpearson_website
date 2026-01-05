@@ -1,7 +1,7 @@
 ---
 title: Jennifer Pearson
-role: Therapist
-avatar_filename: 20170625-dsc_0124.jpg
+role: Clinical Therapist
+avatar_filename: avatar.jpg
 bio: My interests include pediatric palliative care and medical social work
 interests:
   - Emotional Support
@@ -29,6 +29,6 @@ email: ""
 superuser: true
 highlight_name: true
 ---
-Jennifer Pearson is a therapist at Accepted Therapy Services. Before becoming a therapist, she was a social worker at Cook Children's Medical Center, where she worked with parents as a non-medical support within the Palliative Care team. Her areas of expertise include supporting parents as they navigate confusing healthcare systems in regards to complex chronic illness and end-of-life concerns. Her research interests include social determinants of health and the impact of family presence on medical outcomes for children admitted to the hospital.
+Jennifer Pearson is a licensed clinical social worker who has been working with adults struggling with depression, anxiety, and ADHD since 2023. Before becoming a therapist, she was a social worker at Cook Children's Medical Center, where she worked with parents as a non-medical support within the Palliative Care team. Her areas of expertise include supporting parents as they navigate confusing healthcare systems in regards to complex chronic illness and end-of-life concerns. Her research interests include the impact of late diagnosis of neurodivergence on mental health and social determinants of health.
 
-Outside of work, Jennifer loves to sew. While her primary love is of quilting, she also loves to sew bags, totes, and anything other than clothing. Jennifer also loves to spend time with her husband, [Chance](https://www.chancetarver.com/), and adventure together.
+Outside of work, Jennifer loves to sew. While her primary love is of quilting, she also loves to sew bags, totes, and anything other than clothing. Jennifer also enjoys spending time with her husband, [Chance](https://www.chancetarver.com/), and their two cats, Stella and Maisy.
