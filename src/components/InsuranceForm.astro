@@ -1,0 +1,72 @@
+---
+import { site, insurances } from '../data/site';
+import FormDisclaimer from './FormDisclaimer.astro';
+
+const redirect = new URL('/thank-you', site.url).href;
+const field =
+  'mt-1.5 block w-full rounded-xl border border-cream-200 bg-white px-4 py-3 text-ink-900 shadow-sm focus:border-sage-400';
+const label = 'block text-sm font-semibold text-ink-800';
+---
+
+<form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  class="space-y-5"
+>
+  <input type="hidden" name="access_key" value={site.web3formsKey} />
+  <input type="hidden" name="subject" value="New insurance verification request from your website" />
+  <input type="hidden" name="from_name" value="Website Insurance Form" />
+  <input type="hidden" name="redirect" value={redirect} />
+  <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+  <FormDisclaimer />
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label class={label} for="name">Your name <span class="text-alert-600">*</span></label>
+      <input class={field} id="name" name="name" type="text" required autocomplete="name" />
+    </div>
+    <div>
+      <label class={label} for="phone">Phone</label>
+      <input class={field} id="phone" name="phone" type="tel" autocomplete="tel" />
+    </div>
+  </div>
+
+  <div>
+    <label class={label} for="email">Email <span class="text-alert-600">*</span></label>
+    <input class={field} id="email" name="email" type="email" required autocomplete="email" />
+  </div>
+
+  <div>
+    <label class={label} for="insurance">Your insurance provider <span class="text-alert-600">*</span></label>
+    <select class={field} id="insurance" name="insurance" required>
+      <option value="" disabled selected>Select your insurance…</option>
+      {insurances.map((ins) => <option value={ins}>{ins}</option>)}
+      <option value="Other / not listed">Other / not listed</option>
+      <option value="Not sure">I'm not sure</option>
+    </select>
+  </div>
+
+  <div>
+    <label class={label} for="best_time">Best time for me to reach you</label>
+    <input
+      class={field}
+      id="best_time"
+      name="best_time"
+      type="text"
+      placeholder="e.g. weekday afternoons"
+    />
+  </div>
+
+  <p class="rounded-xl bg-sage-50 p-3 text-sm text-ink-700">
+    No need to enter your member ID or date of birth here. I'll collect what
+    I need to verify your benefits through my secure, HIPAA-compliant email.
+  </p>
+
+  <button
+    type="submit"
+    class="inline-flex w-full items-center justify-center rounded-full bg-periwinkle-500 px-7 py-3.5 text-base font-semibold text-cream-50 transition-colors hover:bg-periwinkle-600 sm:w-auto"
+  >
+    Request insurance check
+  </button>
+</form>

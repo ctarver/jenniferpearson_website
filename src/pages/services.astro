@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CTAButton from '../components/CTAButton.astro';
+import { services, modalities, site } from '../data/site';
+---
+
+<BaseLayout
+  title="Services & Specialties"
+  description="Therapy for adults in North Texas, anxiety, depression, adult ADHD, burnout, grief, trauma, and life transitions. In person in Euless and telehealth across Texas."
+>
+  <section class="bg-cream-100">
+    <div class="mx-auto max-w-6xl px-4 py-16 text-center">
+      <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-sage-600">Services</p>
+      <h1 class="text-4xl sm:text-5xl">How I can help</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-ink-700">
+        I work with adults across a range of concerns. Whatever brought you here, we'll
+        go at a pace that feels right for you.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {services.map((s) => <ServiceCard title={s.title} blurb={s.blurb} />)}
+    </div>
+  </section>
+
+  <!-- Approach / modalities -->
+  <section class="mx-auto max-w-6xl px-4 pb-4">
+    <SectionHeading
+      eyebrow="My approach"
+      title="Therapies I draw on"
+    />
+    <p class="mt-5 max-w-2xl text-lg text-ink-700">
+      Therapy isn't one-size-fits-all. I tailor our work to you, drawing on
+      evidence-based approaches and weaving them together as your needs change.
+    </p>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2">
+      {
+        modalities.map((m) => (
+          <div class="rounded-2xl border border-cream-200 bg-white p-6 shadow-sm">
+            <h3 class="text-lg text-sage-700">{m.name}</h3>
+            <p class="mt-2 text-ink-700">{m.blurb}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Formats -->
+  <section class="mt-12 bg-sage-50">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <SectionHeading eyebrow="How we meet" title="In person & online" />
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <div class="rounded-2xl border border-cream-200 bg-white p-6 shadow-sm">
+          <h3 class="text-xl text-sage-700">In-person therapy</h3>
+          <p class="mt-2 text-ink-700">
+            Meet face-to-face at the office in {site.address.city}, conveniently located
+            for the Bedford/Euless area and the greater DFW metroplex.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-cream-200 bg-white p-6 shadow-sm">
+          <h3 class="text-xl text-sage-700">Telehealth across Texas</h3>
+          <p class="mt-2 text-ink-700">
+            Prefer to meet from home? Secure video sessions are available to anyone
+            located in Texas, a flexible option for busy schedules.
+          </p>
+        </div>
+      </div>
+      <p class="mt-6 text-ink-700">
+        I work with <strong>adults</strong>. Sessions are by appointment, see
+        <a href="/contact" class="font-semibold text-sage-700 underline">current hours</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-4 py-20 text-center">
+    <h2 class="text-3xl sm:text-4xl">Let's take the first step together</h2>
+    <p class="mx-auto mt-4 max-w-xl text-lg text-ink-700">
+      Request a free consultation and we'll talk through what you're looking for.
+    </p>
+    <div class="mt-8">
+      <CTAButton href="/contact">Request a Free Consultation</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

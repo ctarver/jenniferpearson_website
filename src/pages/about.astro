@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CTAButton from '../components/CTAButton.astro';
+import { Image } from 'astro:assets';
+import portrait from '../assets/jennifer-portrait.jpeg';
+import { site, experience } from '../data/site';
+
+const education = [
+  { course: 'Master of Social Work', institution: 'University of Houston', year: '2019' },
+  { course: 'Bachelor of Arts, Music', institution: 'Syracuse University', year: '2014' },
+];
+---
+
+<BaseLayout
+  title="About Jennifer"
+  description="Meet Jennifer Pearson, LCSW, a Licensed Clinical Social Worker in Euless, TX offering compassionate therapy for adults, in person and via telehealth."
+>
+  <section class="bg-cream-100">
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-5">
+      <div class="lg:col-span-2">
+        <div class="overflow-hidden rounded-[2rem] border-8 border-white shadow-xl">
+          <Image
+            src={portrait}
+            alt={`Portrait of ${site.name}`}
+            widths={[400, 600, 800]}
+            sizes="(min-width: 1024px) 420px, 90vw"
+            class="h-full w-full object-cover"
+            loading="eager"
+          />
+        </div>
+      </div>
+      <div class="lg:col-span-3">
+        <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-sage-600">
+          {site.role}
+        </p>
+        <h1 class="text-4xl sm:text-5xl">Hi, I'm Jennifer.</h1>
+        <p class="mt-5 text-lg text-ink-700">
+          {site.tagline} Therapy works best when you feel safe, seen, and respected, so that's where we start.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <article class="mx-auto max-w-3xl px-4 py-16">
+    <div class="space-y-5 text-lg text-ink-700">
+      <p>
+        I'm a Licensed Clinical Social Worker who works with adults navigating anxiety,
+        depression, ADHD, burnout, grief, trauma, and the big and small transitions
+        that come with being human. My approach is compassionate, curious, and
+        non-judgmental. I see you as the expert on your own experience, my role is to
+        offer a safe, affirming space and to help you build the insight and skills to
+        navigate what's in front of you.
+      </p>
+      <p>
+        Before opening my practice, I worked as a medical social worker, including on
+        the Palliative Care team at Cook Children's Medical Center, where I supported
+        families through complex chronic illness and end-of-life concerns. I've sat with
+        people in cardiac intensive care, helped families navigate confusing healthcare
+        systems, and learned, again and again, that healing isn't linear. That work
+        profoundly shaped how I show up in the therapy room.
+      </p>
+      <p>
+        I have a special interest in supporting neurodivergent adults, including those
+        who were diagnosed later in life, and in how our circumstances and environments
+        shape our mental health.
+      </p>
+      <p>
+        Outside of work, you'll usually find me sewing, I love quilting, bags, and
+        totes (just about anything that isn't clothing), and spending time with my
+        husband and our two cats, Stella and Maisy.
+      </p>
+    </div>
+
+    <div class="mt-12">
+      <SectionHeading eyebrow="Experience" title="Where I've worked" />
+      <ul class="mt-6 space-y-4">
+        {
+          experience.map((job) => (
+            <li class="rounded-2xl border border-cream-200 bg-white p-5 shadow-sm">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+                <p class="font-semibold text-ink-900">{job.title}</p>
+                <p class="text-sm text-ink-700">{job.period}</p>
+              </div>
+              <p class="text-sm text-ink-700">
+                {job.orgUrl ? (
+                  <a href={job.orgUrl} class="text-sage-700 underline" target="_blank" rel="noopener">
+                    {job.org}
+                  </a>
+                ) : (
+                  job.org
+                )}
+                {job.location && <span> &middot; {job.location}</span>}
+              </p>
+              {job.note && <p class="mt-2 text-sm text-ink-700">{job.note}</p>}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="mt-12">
+      <SectionHeading eyebrow="Background" title="Education & credentials" />
+      <ul class="mt-6 space-y-4">
+        <li class="rounded-2xl border border-cream-200 bg-white p-5 shadow-sm">
+          <p class="font-semibold text-ink-900">Licensed Clinical Social Worker (LCSW)</p>
+          <p class="text-sm text-ink-700">State of Texas</p>
+        </li>
+        {
+          education.map((e) => (
+            <li class="rounded-2xl border border-cream-200 bg-white p-5 shadow-sm">
+              <p class="font-semibold text-ink-900">{e.course}</p>
+              <p class="text-sm text-ink-700">
+                {e.institution} &middot; {e.year}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="mt-12 rounded-2xl bg-sage-50 p-8 text-center">
+      <h2 class="text-2xl">Curious whether we're a good fit?</h2>
+      <p class="mx-auto mt-3 max-w-md text-ink-700">
+        Let's set up a free consultation. There's no pressure, just a chance to talk
+        and see how I can help.
+      </p>
+      <div class="mt-6">
+        <CTAButton href="/contact">Request a Free Consultation</CTAButton>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

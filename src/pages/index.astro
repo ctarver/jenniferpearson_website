@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CTAButton from '../components/CTAButton.astro';
+import { Image } from 'astro:assets';
+import headshot from '../assets/jennifer-headshot.jpg';
+import { services, insurances, site } from '../data/site';
+
+const featured = services.slice(0, 6);
+---
+
+<BaseLayout>
+  <Hero />
+
+  <!-- Who she helps -->
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <SectionHeading
+      eyebrow="You're not alone in this"
+      title="A warm, judgment-free place to feel like yourself again"
+      align="center"
+    />
+    <p class="mx-auto mt-5 max-w-2xl text-center text-lg text-ink-700">
+      Maybe you've been holding it together for a long time, and you're tired.
+      Maybe anxiety won't quiet down, or you're grieving, or a recent diagnosis has
+      you rethinking everything. Wherever you are, therapy can be a steady place to
+      breathe, make sense of things, and move forward at your own pace.
+    </p>
+    <div class="mt-8 text-center">
+      <CTAButton href="/contact">Request a Free Consultation</CTAButton>
+    </div>
+  </section>
+
+  <!-- Services preview -->
+  <section class="bg-sage-50">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <SectionHeading eyebrow="How I can help" title="Areas of focus" />
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {featured.map((s) => <ServiceCard title={s.title} blurb={s.blurb} />)}
+      </div>
+      <div class="mt-10">
+        <CTAButton href="/services" variant="secondary">See all services</CTAButton>
+      </div>
+    </div>
+  </section>
+
+  <!-- About teaser -->
+  <section class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-5">
+    <div class="lg:col-span-2">
+      <div class="overflow-hidden rounded-[2rem] border-8 border-white shadow-lg">
+        <Image
+          src={headshot}
+          alt={`${site.name} smiling`}
+          widths={[400, 600]}
+          sizes="(min-width: 1024px) 380px, 90vw"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+    <div class="lg:col-span-3">
+      <SectionHeading eyebrow="Meet Jennifer" title="Therapy that feels human" />
+      <p class="mt-5 text-lg text-ink-700">
+        I'm Jennifer Pearson, a Licensed Clinical Social Worker. Before private practice,
+        I spent years as a medical social worker, including on a pediatric palliative
+        care team, sitting with people through some of the hardest moments imaginable.
+        That work shaped how I show up: compassionate, curious, and genuinely
+        non-judgmental. I believe you are the expert on your own life, and my job is to
+        walk alongside you.
+      </p>
+      <div class="mt-8">
+        <CTAButton href="/about" variant="secondary">More about Jennifer</CTAButton>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance strip -->
+  <section class="bg-cream-100">
+    <div class="mx-auto max-w-6xl px-4 py-14 text-center">
+      <SectionHeading eyebrow="Affordable & accessible" title="In-network with major insurers" align="center" />
+      <ul class="mx-auto mt-6 flex max-w-3xl flex-wrap justify-center gap-3">
+        {
+          insurances.map((ins) => (
+            <li class="rounded-full bg-white px-5 py-2 text-sm font-semibold text-sage-700 shadow-sm">
+              {ins}
+            </li>
+          ))
+        }
+      </ul>
+      <p class="mt-5 text-ink-700">
+        Not sure about your coverage? <a href="/insurance-verification" class="font-semibold text-sage-700 underline">Verify your insurance</a> and I'll check your benefits for you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="mx-auto max-w-4xl px-4 py-20 text-center">
+    <h2 class="text-3xl sm:text-4xl">Ready when you are</h2>
+    <p class="mx-auto mt-4 max-w-xl text-lg text-ink-700">
+      Reaching out is the first step. Request a free, no-pressure consultation and
+      we'll find a time to talk about what you're looking for.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <CTAButton href="/contact">Request a Free Consultation</CTAButton>
+      <CTAButton href={`mailto:${site.email}`} variant="secondary">Email me</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

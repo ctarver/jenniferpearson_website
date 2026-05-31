@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="How this website collects and handles the information you share through its forms."
+>
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <h1 class="text-4xl sm:text-5xl">Privacy Policy</h1>
+    <p class="mt-4 text-sm text-ink-700">Website privacy practices</p>
+
+    <div class="mt-8 space-y-6 text-ink-700">
+      <p>
+        This policy explains how information you share through this website is handled.
+        It applies to the website only. The privacy of your clinical records and care is
+        governed separately by HIPAA and the practice's Notice of Privacy Practices,
+        which I'll provide before treatment begins.
+      </p>
+
+      <div>
+        <h2 class="text-2xl text-ink-900">What this website collects</h2>
+        <p class="mt-3">
+          If you choose to use the contact or insurance-verification forms, we collect
+          only the information you enter, such as your name, email, phone number,
+          preferred contact method, insurance provider, and any message you write. The
+          forms intentionally do <strong>not</strong> ask for sensitive medical details,
+          member ID numbers, dates of birth, or Social Security numbers.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl text-ink-900">How form submissions are handled</h2>
+        <p class="mt-3">
+          Form submissions are delivered by a third-party form service (Web3Forms) and
+          sent by email to me. Because this on-site form pathway is not a
+          HIPAA-secured channel, please keep what you share general. I follow up
+          privately through a secure, HIPAA-compliant email account to discuss anything
+          personal and to verify insurance benefits.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl text-ink-900">How your information is used</h2>
+        <p class="mt-3">
+          Information you submit is used only to respond to your inquiry, verify
+          benefits if requested, and schedule services. It is not sold or shared for
+          marketing.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl text-ink-900">Analytics & cookies</h2>
+        <p class="mt-3">
+          This site aims to keep tracking to a minimum. If basic, privacy-respecting
+          analytics are used, they are limited to understanding general site usage and
+          are not used to identify you personally.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl text-ink-900">Not for emergencies</h2>
+        <p class="mt-3">
+          This website is not monitored for emergencies and does not provide crisis
+          services. If you are in crisis, call <a href="tel:911" class="underline">911</a>
+          or call/text <a href="tel:988" class="underline">988</a>, or see our
+          <a href="/crisis" class="underline">crisis resources</a>. Using this website
+          does not create a therapist–client relationship.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl text-ink-900">Questions</h2>
+        <p class="mt-3">
+          For any questions about this policy, contact me at
+          <a href={`mailto:${site.email}`} class="underline">{site.email}</a> or
+          <a href={site.phoneHref} class="underline">{site.phone}</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

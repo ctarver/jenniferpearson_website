@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="Thank You"
+  description="Your message has been received."
+>
+  <section class="mx-auto max-w-2xl px-4 py-24 text-center">
+    <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-sage-100">
+      <svg class="h-8 w-8 text-sage-600" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+    <h1 class="text-4xl sm:text-5xl">Thank you for reaching out</h1>
+    <p class="mx-auto mt-5 max-w-md text-lg text-ink-700">
+      Your message has been sent. I'll personally get back to you, usually
+      within about two business days, through my secure email to find a time to talk.
+    </p>
+    <p class="mt-4 text-ink-700">
+      Need to reach me sooner? Email <a href={`mailto:${site.email}`} class="font-semibold text-sage-700 underline">{site.email}</a>.
+    </p>
+    <div class="mt-8">
+      <CTAButton href="/">Back to home</CTAButton>
+    </div>
+    <p class="mt-10 text-sm text-ink-700">
+      If this is an emergency, call <a href="tel:911" class="underline">911</a> or
+      call/text <a href="tel:988" class="underline">988</a>.
+    </p>
+  </section>
+</BaseLayout>

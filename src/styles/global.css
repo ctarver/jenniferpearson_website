@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+/* Self-hosted fonts (no external requests) */
+@import '@fontsource/merriweather/400.css';
+@import '@fontsource/merriweather/700.css';
+@import '@fontsource/nunito-sans/400.css';
+@import '@fontsource/nunito-sans/600.css';
+@import '@fontsource/nunito-sans/700.css';
+
+/* Calm, cool-toned design tokens (Tailwind v4 theme).
+   Built to harmonize with the periwinkle accent. Token names are kept
+   (cream/sage/ink) for continuity, but the values are now cool. */
+@theme {
+  --font-serif: 'Merriweather', ui-serif, Georgia, serif;
+  --font-sans: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /* Cool off-white / pale slate neutrals (page + section backgrounds) */
+  --color-cream-50: #f7f8fc;
+  --color-cream-100: #eceff6;
+  --color-cream-200: #d8dcea;
+
+  /* Dusty slate-blue, cool secondary accent (eyebrows, links, card headings).
+     Token name kept as "sage" for continuity; values are blue, no green cast. */
+  --color-sage-50: #e3e8f0;
+  --color-sage-100: #d2dbe8;
+  --color-sage-200: #aebdd0;
+  --color-sage-300: #8195b1;
+  --color-sage-400: #5d7593;
+  --color-sage-500: #4a6385;
+  --color-sage-600: #3f5772;
+  --color-sage-700: #33475d;
+  --color-sage-800: #283849;
+
+  /* Periwinkle, soft blue-violet accent for CTAs */
+  --color-periwinkle-50: #f3f3fb;
+  --color-periwinkle-100: #e6e7f7;
+  --color-periwinkle-200: #cfd0ef;
+  --color-periwinkle-300: #aeb1e2;
+  --color-periwinkle-400: #8b8ed4;
+  --color-periwinkle-500: #7174c4;
+  --color-periwinkle-600: #595cab;
+  --color-periwinkle-700: #474a8c;
+
+  /* Alert, cool berry/plum reserved for emergency & crisis elements */
+  --color-alert-50: #f8eef3;
+  --color-alert-300: #d79cb8;
+  --color-alert-500: #bb4a72;
+  --color-alert-600: #9b3a5c;
+  --color-alert-700: #7c2f49;
+
+  /* Cool slate charcoal text */
+  --color-ink-700: #4a4f63;
+  --color-ink-800: #333748;
+  --color-ink-900: #1f2230;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream-50);
+  color: var(--color-ink-800);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem; /* 17px base for comfortable reading */
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base heading styles live in @layer base so Tailwind text-color utilities
+   (e.g. text-cream-50 on dark backgrounds) can override the default ink color. */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    color: var(--color-ink-900);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Visible focus for keyboard users */
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 3px solid var(--color-sage-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "jenniferpearson-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "@fontsource/merriweather": "^5.2.11",
+    "@fontsource/nunito-sans": "^5.1.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "astro": "^5.1.0",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^4.0.0"
+  }
+}

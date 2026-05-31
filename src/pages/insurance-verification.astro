@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InsuranceForm from '../components/InsuranceForm.astro';
+---
+
+<BaseLayout
+  title="Verify Your Insurance"
+  description="Check your therapy benefits. Share a few details and Jennifer Pearson, LCSW will verify your behavioral-health coverage for you."
+>
+  <section class="bg-cream-100">
+    <div class="mx-auto max-w-6xl px-4 py-16 text-center">
+      <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-sage-600">Insurance</p>
+      <h1 class="text-4xl sm:text-5xl">Verify your benefits</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-ink-700">
+        Let me do the legwork. Share a little information below and I'll check
+        what your plan covers, then follow up securely by email.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-2xl px-4 py-14">
+    <InsuranceForm />
+    <p class="mt-6 text-sm text-ink-700">
+      It's also a good idea to call the member services number on the back of your
+      insurance card and ask about your outpatient mental health benefits, what your
+      copay and deductible are, and whether there are any visit limits. Checking
+      directly with your insurer is the surest way to understand your coverage and costs.
+    </p>
+  </section>
+</BaseLayout>

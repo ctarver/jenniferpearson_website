@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="Contact & Request a Consultation"
+  description="Request a free consultation with Jennifer Pearson, LCSW. In-person therapy in Euless, TX and telehealth across Texas. Send a message or email to get started."
+>
+  <section class="bg-cream-100">
+    <div class="mx-auto max-w-6xl px-4 py-16 text-center">
+      <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-sage-600">Contact</p>
+      <h1 class="text-4xl sm:text-5xl">Let's connect</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-ink-700">
+        Reaching out can be the hardest part, and you've nearly done it. Send a note
+        below and I'll personally get back to you to find a time to talk.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-12 px-4 py-14 lg:grid-cols-5">
+    <div class="lg:col-span-3">
+      <h2 class="text-2xl">Request a free consultation</h2>
+      <p class="mt-2 text-ink-700">A free, no-pressure consultation to see if we're a good fit.</p>
+      <div class="mt-6">
+        <ContactForm />
+      </div>
+    </div>
+
+    <aside class="lg:col-span-2">
+      <div class="rounded-2xl border border-cream-200 bg-white p-6 shadow-sm">
+        <h2 class="text-xl text-sage-700">Reach me directly</h2>
+        <p class="mt-2 text-sm text-ink-700">
+          The best ways to reach me are the form above or email. I'll reply within about
+          two business days.
+        </p>
+        <ul class="mt-4 space-y-3 text-ink-800">
+          <li>
+            <span class="block text-sm font-semibold text-ink-800">Email</span>
+            <a href={`mailto:${site.email}`} class="no-underline hover:text-sage-700">{site.email}</a>
+          </li>
+          <li>
+            <span class="block text-sm font-semibold text-ink-800">Office</span>
+            <span>{site.address.line1}</span><br />
+            <span>{site.address.city}, {site.address.state} {site.address.zip}</span>
+          </li>
+          <li>
+            <span class="block text-sm font-semibold text-ink-800">Area served</span>
+            <span>{site.address.areaServed}, plus telehealth across Texas.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-6 rounded-2xl border border-cream-200 bg-white p-6 shadow-sm">
+        <h2 class="text-xl text-sage-700">Office hours</h2>
+        <ul class="mt-4 space-y-3">
+          {
+            site.hours.map((h) => (
+              <li>
+                <span class="block font-semibold text-ink-900">{h.days}</span>
+                <span class="text-ink-700">
+                  {h.time} &middot; {h.note}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="mt-6 rounded-2xl bg-alert-700 p-6 text-cream-50">
+        <h2 class="text-lg font-semibold text-cream-50">In crisis right now?</h2>
+        <p class="mt-2 text-sm">
+          This form isn't monitored for emergencies. Call <a href="tel:911" class="font-semibold underline">911</a>
+          or call/text the 988 Suicide &amp; Crisis Lifeline at
+          <a href="tel:988" class="font-semibold underline">988</a>.
+          <a href="/crisis" class="font-semibold underline">See all crisis resources</a>
+        </p>
+      </div>
+    </aside>
+  </section>
+
+  <!-- Office location map -->
+  <section class="mx-auto max-w-6xl px-4 pb-16">
+    <div class="overflow-hidden rounded-2xl border border-cream-200 bg-white shadow-sm">
+      <div class="flex flex-wrap items-center justify-between gap-2 px-6 py-4">
+        <div>
+          <h2 class="text-xl text-sage-700">Visit the office</h2>
+          <p class="text-sm text-ink-700">
+            {site.address.line1}, {site.address.city}, {site.address.state} {site.address.zip}
+          </p>
+        </div>
+        <a
+          href={site.address.directionsUrl}
+          target="_blank"
+          rel="noopener"
+          class="text-sm font-semibold text-sage-700 underline"
+        >
+          Get directions
+        </a>
+      </div>
+      <iframe
+        title={`Map showing the office at ${site.address.line1}, ${site.address.city}, ${site.address.state}`}
+        src={site.address.mapEmbedUrl}
+        width="100%"
+        height="380"
+        style="border:0; display:block;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+    </div>
+  </section>
+</BaseLayout>

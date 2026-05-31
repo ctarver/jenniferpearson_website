@@ -1,0 +1,85 @@
+---
+import { site } from '../data/site';
+import FormDisclaimer from './FormDisclaimer.astro';
+
+const redirect = new URL('/thank-you', site.url).href;
+const field =
+  'mt-1.5 block w-full rounded-xl border border-cream-200 bg-white px-4 py-3 text-ink-900 shadow-sm focus:border-sage-400';
+const label = 'block text-sm font-semibold text-ink-800';
+---
+
+<form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  class="space-y-5"
+>
+  <input type="hidden" name="access_key" value={site.web3formsKey} />
+  <input type="hidden" name="subject" value="New consultation request from your website" />
+  <input type="hidden" name="from_name" value="Website Contact Form" />
+  <input type="hidden" name="redirect" value={redirect} />
+  <!-- Honeypot: bots fill this; humans never see it -->
+  <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+  <FormDisclaimer />
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label class={label} for="name">Your name <span class="text-alert-600">*</span></label>
+      <input class={field} id="name" name="name" type="text" required autocomplete="name" />
+    </div>
+    <div>
+      <label class={label} for="phone">Phone</label>
+      <input class={field} id="phone" name="phone" type="tel" autocomplete="tel" />
+    </div>
+  </div>
+
+  <div>
+    <label class={label} for="email">Email <span class="text-alert-600">*</span></label>
+    <input class={field} id="email" name="email" type="email" required autocomplete="email" />
+  </div>
+
+  <fieldset>
+    <legend class={label}>Preferred way to reach you <span class="text-alert-600">*</span></legend>
+    <div class="mt-2 flex flex-wrap gap-4 text-sm text-ink-800">
+      <label class="inline-flex items-center gap-2">
+        <input type="radio" name="preferred_contact" value="Email" required /> Email
+      </label>
+      <label class="inline-flex items-center gap-2">
+        <input type="radio" name="preferred_contact" value="Phone call" required /> Phone call
+      </label>
+      <label class="inline-flex items-center gap-2">
+        <input type="radio" name="preferred_contact" value="Text" required /> Text
+      </label>
+    </div>
+  </fieldset>
+
+  <div>
+    <label class={label} for="best_time">Best time to reach you</label>
+    <input
+      class={field}
+      id="best_time"
+      name="best_time"
+      type="text"
+      placeholder="e.g. weekday mornings"
+    />
+  </div>
+
+  <div>
+    <label class={label} for="message">
+      What brings you in? <span class="font-normal text-ink-700">(optional)</span>
+    </label>
+    <textarea
+      class={field}
+      id="message"
+      name="message"
+      rows="4"
+      placeholder="A sentence or two is plenty, and please keep it general."></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="inline-flex w-full items-center justify-center rounded-full bg-periwinkle-500 px-7 py-3.5 text-base font-semibold text-cream-50 transition-colors hover:bg-periwinkle-600 sm:w-auto"
+  >
+    Send my request
+  </button>
+</form>

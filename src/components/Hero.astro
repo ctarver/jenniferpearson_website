@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/jennifer-portrait.jpeg';
+import { site } from '../data/site';
+import CTAButton from './CTAButton.astro';
+---
+
+<section class="relative overflow-hidden bg-cream-100">
+  <div
+    class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:py-20 lg:grid-cols-2 lg:gap-16"
+  >
+    <div>
+      <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-sage-600">
+        {site.name}
+      </p>
+      <h1 class="text-4xl leading-tight sm:text-5xl">
+        {site.tagline}
+      </h1>
+      <p class="mt-5 max-w-xl text-lg text-ink-700">
+        Compassionate, down-to-earth therapy for adults navigating anxiety,
+        depression, ADHD, burnout, grief, and life's hardest transitions, in person in {site.address.city} and online across Texas.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <CTAButton href="/contact">Request a Free Consultation</CTAButton>
+        <CTAButton href="/about" variant="secondary">Meet Jennifer</CTAButton>
+      </div>
+      <p class="mt-6 text-sm text-ink-700">
+        In-network with Aetna, Cigna, UnitedHealthcare &amp; Blue Cross Blue Shield.
+      </p>
+    </div>
+
+    <div class="relative">
+      <div
+        class="overflow-hidden rounded-[2rem] border-8 border-white shadow-xl"
+      >
+        <Image
+          src={portrait}
+          alt={`Portrait of ${site.name}`}
+          widths={[400, 600, 800]}
+          sizes="(min-width: 1024px) 480px, 90vw"
+          class="h-full w-full object-cover"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+</section>

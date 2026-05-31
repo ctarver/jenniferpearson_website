@@ -1,0 +1,67 @@
+---
+import { nav, site } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-20 border-t border-cream-200 bg-cream-100">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="sm:col-span-2 lg:col-span-2">
+      <p class="font-serif text-xl font-bold text-ink-900">{site.name}</p>
+      <p class="mt-2 max-w-sm text-sm text-ink-700">
+        {site.role} offering warm, affirming therapy for adults, in person in
+        {site.address.city}, {site.address.state}, and via telehealth across Texas.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-sage-600">Explore</h2>
+      <ul class="mt-3 space-y-2">
+        {
+          nav.map((item) => (
+            <li>
+              <a href={item.href} class="text-sm text-ink-700 no-underline hover:text-sage-700">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a href="/privacy" class="text-sm text-ink-700 no-underline hover:text-sage-700">
+            Privacy Policy
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-sage-600">Get in touch</h2>
+      <ul class="mt-3 space-y-2 text-sm text-ink-700">
+        <li>
+          <a href={site.phoneHref} class="no-underline hover:text-sage-700">{site.phone}</a>
+        </li>
+        <li>
+          <a href={`mailto:${site.email}`} class="no-underline hover:text-sage-700">{site.email}</a>
+        </li>
+        <li>{site.address.line1}</li>
+        <li>{site.address.city}, {site.address.state} {site.address.zip}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-cream-200">
+    <div class="mx-auto max-w-6xl px-4 py-6 text-xs text-ink-700">
+      <p class="mb-2">
+        <strong>This website is not for emergencies.</strong> If you are in crisis,
+        call <a href="tel:911" class="underline">911</a> or call/text
+        <a href="tel:988" class="underline">988</a>. See our
+        <a href="/crisis" class="underline">crisis resources</a>.
+      </p>
+      <p class="mb-2">
+        Visiting this website or contacting us through it does not create a
+        therapist–client relationship. Information here is for general purposes and is
+        not a substitute for professional care.
+      </p>
+      <p>&copy; {year} {site.name}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

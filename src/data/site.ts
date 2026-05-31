@@ -1,0 +1,327 @@
+// Single source of truth for site-wide facts and copy.
+// Edit values here to update them everywhere across the site.
+
+export const site = {
+  name: 'Jennifer Pearson, LCSW',
+  shortName: 'Jennifer Pearson',
+  credential: 'LCSW',
+  role: 'Licensed Clinical Social Worker',
+  tagline: "This is hard. I'm glad you're here.",
+  description:
+    'Warm, compassionate therapy for adults in North Texas. Jennifer Pearson, LCSW offers in-person and telehealth counseling for anxiety, depression, ADHD, burnout, grief, and life transitions.',
+  url: 'https://jenniferpearsonlcsw.com',
+
+  email: 'hello@jenniferpearsonlcsw.com',
+  phone: '(817) 900-2251',
+  phoneHref: 'tel:+18179002251',
+
+  address: {
+    line1: '425 Westpark Way, Suite 202',
+    city: 'Euless',
+    state: 'TX',
+    zip: '76040',
+    areaServed: 'Bedford, Euless, and the greater DFW / North Texas area',
+    // Keyless Google Maps embed + a "get directions" link, both built from the address.
+    mapEmbedUrl:
+      'https://www.google.com/maps?q=425+Westpark+Way+Suite+202+Euless+TX+76040&output=embed',
+    directionsUrl:
+      'https://www.google.com/maps/dir/?api=1&destination=425+Westpark+Way+Suite+202+Euless+TX+76040',
+  },
+
+  hours: [
+    { days: 'Monday – Thursday', time: '8:00am – 5:00pm', note: 'In person & telehealth' },
+    { days: 'Friday', time: '7:00am – 1:00pm', note: 'Telehealth only' },
+  ],
+
+  // Web3Forms public access key, injected from the PUBLIC_WEB3FORMS_KEY env var at build time.
+  web3formsKey: import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '',
+} as const;
+
+export const nav = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Fees & Insurance', href: '/fees-insurance' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Crisis Resources', href: '/crisis' },
+] as const;
+
+export type Service = {
+  title: string;
+  blurb: string;
+};
+
+export const services: Service[] = [
+  {
+    title: 'Anxiety & Stress',
+    blurb:
+      'Quiet the racing thoughts and constant worry. Learn to feel steadier and more present in your day-to-day life.',
+  },
+  {
+    title: 'Depression',
+    blurb:
+      'When everything feels heavy or numb, we work gently toward connection, meaning, and small steps forward.',
+  },
+  {
+    title: 'Adult ADHD',
+    blurb:
+      'Understand how your brain works and build systems and self-compassion that actually fit you, especially after a later-in-life diagnosis.',
+  },
+  {
+    title: 'Burnout',
+    blurb:
+      'For those who have been holding it together for everyone else. Rediscover rest, boundaries, and what you need.',
+  },
+  {
+    title: 'Grief & Medical Stress',
+    blurb:
+      'Support through loss, chronic and complex illness, caregiving, and end-of-life concerns, drawing on years of medical social work.',
+  },
+  {
+    title: 'Life Transitions',
+    blurb:
+      'New roles, relationships, identities, and seasons of change. A space to find your footing when life shifts.',
+  },
+  {
+    title: 'Trauma Recovery',
+    blurb:
+      'Move at your own pace in a safe, affirming space as you process difficult experiences and reclaim a sense of safety.',
+  },
+  {
+    title: 'Relationship Challenges',
+    blurb:
+      'Navigate conflict, communication, and connection, with partners, family, or the relationship you have with yourself.',
+  },
+];
+
+export const insurances = [
+  'Aetna',
+  'Cigna / Evernorth',
+  'UnitedHealthcare / Optum',
+  'Blue Cross Blue Shield',
+];
+
+export const insurancesNotAccepted = ['Medicaid', 'Medicare'];
+
+export type Modality = {
+  name: string;
+  blurb: string;
+};
+
+export const modalities: Modality[] = [
+  {
+    name: 'Acceptance & Commitment Therapy (ACT)',
+    blurb:
+      'Making room for difficult thoughts and feelings while taking steps toward what matters most to you.',
+  },
+  {
+    name: 'Dialectical Behavior Therapy (DBT)',
+    blurb:
+      'Practical skills for managing intense emotions, tolerating distress, and steadying relationships.',
+  },
+  {
+    name: 'Cognitive Behavioral Therapy (CBT)',
+    blurb:
+      'Noticing the links between thoughts, feelings, and actions, and gently shifting unhelpful patterns.',
+  },
+  {
+    name: 'EMDR',
+    blurb:
+      'A structured approach to processing trauma and distressing memories so they lose their grip.',
+  },
+];
+
+export type Experience = {
+  title: string;
+  org: string;
+  orgUrl?: string;
+  location?: string;
+  period: string;
+  note?: string;
+};
+
+export const experience: Experience[] = [
+  {
+    title: 'Therapist',
+    org: 'Accepted Therapy Services',
+    orgUrl: 'http://www.acceptedtherapy.com/',
+    location: 'Fort Worth, TX',
+    period: 'May 2023 – May 2026',
+  },
+  {
+    title: 'Medical Social Worker',
+    org: "Cook Children's Medical Center",
+    orgUrl: 'https://www.cookchildrens.org/',
+    location: 'Fort Worth, TX',
+    period: 'Jan 2020 – Sept 2022',
+    note: 'Supporting families in cardiac intensive care, step-down, and palliative care.',
+  },
+  {
+    title: 'Graduate Social Work Intern',
+    org: "Texas Children's Hospital",
+    orgUrl: 'https://www.texaschildrens.org/',
+    location: 'Houston, TX',
+    period: 'During MSW',
+    note: 'Field placement during my Master of Social Work.',
+  },
+  {
+    title: 'Graduate Social Work Intern',
+    org: 'The Monarch School and Institute',
+    orgUrl: 'https://www.monarchschool.org/',
+    location: 'Houston, TX',
+    period: 'During MSW',
+    note: 'A therapeutic school for students with neurological differences.',
+  },
+];
+
+export type Faq = {
+  question: string;
+  answer: string;
+};
+
+export const faqs: Faq[] = [
+  {
+    question: 'How do I get started?',
+    answer:
+      "The easiest way is to fill out the contact form and tell me a little about what's bringing you in. I'll personally reach back out, usually within about two business days, to set up a free consultation. It's a relaxed, no-pressure conversation to see whether we're a good fit before you commit to anything.",
+  },
+  {
+    question: 'What is the free consultation like?',
+    answer:
+      "It's a short, casual conversation, no paperwork or pressure. You can share what you're hoping to work on, ask me anything, and get a feel for how I work. If it feels like a match, we'll find a time to begin. If I'm not the right therapist for you, I'm glad to help point you somewhere that fits better.",
+  },
+  {
+    question: 'Do you meet in person or online?',
+    answer:
+      "Both. I see clients in person at my office in Euless, and I also offer secure telehealth sessions to anyone located in Texas. Many people like to mix the two depending on their week. We'll figure out what works best for your life.",
+  },
+  {
+    question: 'Who do you work with?',
+    answer:
+      'I work with adults. People come to me for all kinds of reasons, anxiety, depression, adult ADHD, burnout, grief, trauma, relationship struggles, and the big and small transitions that come with being human. I have a special interest in supporting neurodivergent adults, including those diagnosed later in life.',
+  },
+  {
+    question: 'What happens in the first session?',
+    answer:
+      "Mostly, we get to know each other. I'll ask about what brought you in, a bit of your history, and what you'd like to be different. There's no right way to do it and nothing you need to prepare. Early sessions are about building trust and getting a shared sense of where we're headed, at a pace that feels comfortable for you.",
+  },
+  {
+    question: 'How does scheduling work?',
+    answer:
+      "We set up your first appointment during the consultation. Most people start out meeting weekly, which helps us build momentum, and once things feel established we can move to weekly or biweekly depending on what you need. Your goals guide how long we work together; there's no fixed number of sessions.",
+  },
+  {
+    question: 'How much does a session cost?',
+    answer:
+      "The self-pay rate is $150 per session. If you're using insurance, your cost depends on your specific plan and benefits, which is exactly what I'll help you sort out before we begin. It's always a good idea to call the member services number on your insurance card and ask about your outpatient mental health coverage too. You can also check your benefits on the insurance verification page.",
+  },
+  {
+    question: 'Do you take insurance?',
+    answer:
+      "Yes. I'm in-network with Aetna, Cigna / Evernorth, UnitedHealthcare / Optum, and Blue Cross Blue Shield. I'm not able to accept Medicaid or Medicare at this time. Coverage and costs can vary a lot from plan to plan, so I'd encourage you to check directly with your insurer about your mental health benefits. If you're not sure what your plan covers, I'm also happy to verify your benefits for you, just share a few details on the insurance verification page.",
+  },
+  {
+    question: 'What if you don’t take my insurance, or I’d rather not use it?',
+    answer:
+      'Self-pay is always welcome at $150 per session, and some people prefer it for privacy or flexibility. I also keep a limited number of sliding-scale and reduced-fee spots for uninsured clients who need them, so please ask. Under the No Surprises Act, I can also give you a Good Faith Estimate of costs up front.',
+  },
+  {
+    question: 'What is your cancellation policy?',
+    answer:
+      "Life happens, and I just ask for as much notice as you can give. A session cancelled within 24 hours of your appointment is considered a late cancellation, with an $80 fee, though genuine emergencies and illness are the exception. The sooner you let me know, the easier it is to find another time that works.",
+  },
+  {
+    question: 'What is your no-show policy?',
+    answer:
+      "If you don't make it to a session and haven't been in touch (arriving more than ten minutes late without notice), it's counted as a no-show, and the full $150 session fee applies. If something urgent and documented came up, just reach out, I'll always work with you on it.",
+  },
+  {
+    question: 'How can I reach you between sessions?',
+    answer:
+      "I'm reachable by email during business hours and will get back to you as soon as I can, usually within about two business days. Please keep messages general; my email is HIPAA-compliant, but it's best for scheduling and quick logistics rather than urgent needs. If something urgent comes up, a short-notice telehealth session may be possible.",
+  },
+  {
+    question: 'Is what I share confidential?',
+    answer:
+      "Yes. What you share in therapy stays between us, with a few legal exceptions every therapist is required to follow: if there's a serious risk of harm to you or someone else, suspected abuse or neglect of a child or vulnerable adult, or a court order. I'll always talk you through these so nothing comes as a surprise.",
+  },
+  {
+    question: 'What if I’m in crisis?',
+    answer:
+      'This website and my inbox are not monitored for emergencies. If you or someone you love is in immediate danger, call 911. You can also call or text the 988 Suicide & Crisis Lifeline any time, day or night. I keep a full list of national and North Texas crisis resources on the Crisis Resources page.',
+  },
+];
+
+export type CrisisResource = {
+  name: string;
+  contact: string;
+  contactHref?: string;
+  note?: string;
+};
+
+export const crisisNational: CrisisResource[] = [
+  {
+    name: '988 Suicide & Crisis Lifeline',
+    contact: 'Call or text 988',
+    contactHref: 'tel:988',
+    note: 'Free, confidential support 24/7. Chat at 988lifeline.org.',
+  },
+  {
+    name: 'Crisis Text Line',
+    contact: 'Text HOME to 741741',
+    contactHref: 'sms:741741?&body=HOME',
+    note: 'Free, 24/7 text support with a trained crisis counselor.',
+  },
+  {
+    name: 'SAMHSA National Helpline',
+    contact: '1-800-662-4357',
+    contactHref: 'tel:18006624357',
+    note: 'Treatment referral and information for mental health and substance use, 24/7.',
+  },
+  {
+    name: 'The Trevor Project (LGBTQ+ youth)',
+    contact: '1-866-488-7386',
+    contactHref: 'tel:18664887386',
+    note: 'Crisis support for LGBTQ+ young people. Text START to 678-678.',
+  },
+  {
+    name: 'Trans Lifeline',
+    contact: '1-877-565-8860',
+    contactHref: 'tel:18775658860',
+    note: 'Peer support run by and for trans people.',
+  },
+  {
+    name: 'Veterans Crisis Line',
+    contact: 'Call 988, then press 1',
+    contactHref: 'tel:988',
+    note: 'Or text 838255. Support for veterans and their loved ones.',
+  },
+];
+
+export const crisisLocal: CrisisResource[] = [
+  {
+    name: 'MHMR of Tarrant County Crisis Line',
+    contact: '1-800-866-2465',
+    contactHref: 'tel:18008662465',
+    note: '24/7 local crisis assessment and mobile crisis outreach.',
+  },
+  {
+    name: 'North Texas Behavioral Health Authority',
+    contact: '1-866-260-8000',
+    contactHref: 'tel:18662608000',
+    note: 'Crisis line serving Dallas and surrounding counties.',
+  },
+  {
+    name: 'Suicide & Crisis Center of North Texas',
+    contact: '214-828-1000',
+    contactHref: 'tel:12148281000',
+    note: 'Local crisis line and support services.',
+  },
+  {
+    name: '2-1-1 Texas',
+    contact: 'Call or text 211',
+    contactHref: 'tel:211',
+    note: 'Connection to local health and community resources.',
+  },
+];
