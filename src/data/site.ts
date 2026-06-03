@@ -144,11 +144,12 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
-    title: 'Therapist',
+    title: 'Clinical Therapist',
     org: 'Accepted Therapy Services',
     orgUrl: 'http://www.acceptedtherapy.com/',
     location: 'Fort Worth, TX',
     period: 'May 2023 – May 2026',
+    note: 'Providing individual psychotherapy to adults.',
   },
   {
     title: 'Medical Social Worker',
@@ -163,16 +164,16 @@ export const experience: Experience[] = [
     org: "Texas Children's Hospital",
     orgUrl: 'https://www.texaschildrens.org/',
     location: 'Houston, TX',
-    period: 'During MSW',
-    note: 'Field placement during my Master of Social Work.',
+    period: 'Aug 2018 – May 2019',
+    note: 'Supporting children with cystic fibrosis and their families across inpatient and outpatient pulmonology.',
   },
   {
     title: 'Graduate Social Work Intern',
     org: 'The Monarch School and Institute',
     orgUrl: 'https://www.monarchschool.org/',
     location: 'Houston, TX',
-    period: 'During MSW',
-    note: 'A therapeutic school for students with neurological differences.',
+    period: 'Sep 2017 – May 2018',
+    note: 'Providing support at a therapeutic school for students with neurological differences.',
   },
 ];
 
