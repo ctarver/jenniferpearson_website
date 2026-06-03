@@ -6,6 +6,7 @@ export const site = {
   shortName: 'Jennifer Pearson',
   credential: 'LCSW',
   role: 'Licensed Clinical Social Worker',
+  licenseNumber: '67898',
   tagline: "This is hard. I'm glad you're here.",
   description:
     'Warm, compassionate therapy for adults in North Texas. Jennifer Pearson, LCSW offers in-person and telehealth counseling for anxiety, depression, ADHD, burnout, grief, and life transitions.',
@@ -126,7 +127,7 @@ export const modalities: Modality[] = [
       'Noticing the links between thoughts, feelings, and actions, and gently shifting unhelpful patterns.',
   },
   {
-    name: 'EMDR',
+    name: 'Eye Movement Desensitization and Reprocessing (EMDR)',
     blurb:
       'A structured approach to processing trauma and distressing memories so they lose their grip.',
   },
