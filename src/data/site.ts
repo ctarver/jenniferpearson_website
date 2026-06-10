@@ -55,7 +55,7 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    title: 'Anxiety & Stress',
+    title: 'Anxiety',
     blurb:
       'Quiet the racing thoughts and constant worry. Learn to feel steadier and more present in your day-to-day life.',
   },
@@ -65,35 +65,56 @@ export const services: Service[] = [
       'When everything feels heavy or numb, we work gently toward connection, meaning, and small steps forward.',
   },
   {
-    title: 'Adult ADHD',
+    title: 'Bipolar disorder',
     blurb:
-      'Understand how your brain works and build systems and self-compassion that actually fit you, especially after a later-in-life diagnosis.',
+      'Steadier ground through the highs and the lows, support for understanding your patterns, easing the intensity, and building a life that feels like your own.',
   },
   {
-    title: 'Burnout',
-    blurb:
-      'For those who have been holding it together for everyone else. Rediscover rest, boundaries, and what you need.',
-  },
-  {
-    title: 'Grief & Medical Stress',
-    blurb:
-      'Support through loss, chronic and complex illness, caregiving, and end-of-life concerns, drawing on years of medical social work.',
-  },
-  {
-    title: 'Life Transitions',
-    blurb:
-      'New roles, relationships, identities, and seasons of change. A space to find your footing when life shifts.',
-  },
-  {
-    title: 'Trauma Recovery',
+    title: 'Trauma / PTSD',
     blurb:
       'Move at your own pace in a safe, affirming space as you process difficult experiences and reclaim a sense of safety.',
   },
   {
-    title: 'Relationship Challenges',
+    title: 'OCD',
     blurb:
-      'Navigate conflict, communication, and connection, with partners, family, or the relationship you have with yourself.',
+      'Find relief from intrusive thoughts and the compulsions meant to quiet them, learning to meet anxiety in a new way rather than be ruled by it.',
   },
+  {
+    title: 'ADHD',
+    blurb:
+      'Understand how your brain works and build systems and self-compassion that actually fit you, especially after a later-in-life diagnosis.',
+  },
+  {
+    title: 'Chronic illness',
+    blurb:
+      'Living with chronic and complex illness, chronic pain, and medical stress, met with the depth of years in medical social work.',
+  },
+  {
+    title: 'Burnout & life transitions',
+    blurb:
+      "For those who've been holding it together for everyone else, through new roles and seasons of change. Rediscover rest, boundaries, and your footing.",
+  },
+  {
+    title: 'Relationships',
+    blurb:
+      'Navigate conflict, communication, and connection, with partners, family, or yourself, including the strain of caregiving and the grief that comes with loss.',
+  },
+];
+
+// Concise focus-area options for the contact form checklist. Kept separate from
+// `services` (which drives the richer Services/Home marketing cards) so the form
+// can stay short and plainly worded.
+export const focusAreas: string[] = [
+  'Anxiety',
+  'Depression',
+  'Bipolar disorder',
+  'Trauma / PTSD',
+  'OCD',
+  'ADHD',
+  'Grief',
+  'Chronic illness',
+  'Burnout & life transitions',
+  'Relationships',
 ];
 
 export const insurances = [
