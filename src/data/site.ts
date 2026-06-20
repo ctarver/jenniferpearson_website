@@ -9,29 +9,24 @@ export const site = {
   licenseNumber: '67898',
   tagline: "This is hard. I'm glad you're here.",
   description:
-    'Warm, compassionate therapy for adults in North Texas. Jennifer Pearson, LCSW offers in-person and telehealth counseling for anxiety, depression, ADHD, burnout, grief, and life transitions.',
+    'Warm, compassionate telehealth therapy for adults across Texas. Jennifer Pearson, LCSW, based in North Texas, offers secure online counseling for anxiety, depression, ADHD, burnout, grief, and life transitions.',
   url: 'https://jenniferpearsonlcsw.com',
 
   email: 'hello@jenniferpearsonlcsw.com',
   phone: '(817) 900-2251',
   phoneHref: 'tel:+18179002251',
 
-  address: {
-    line1: '425 Westpark Way, Suite 202',
-    city: 'Euless',
+  // Telehealth-only practice: no public office address. North Texas is the home base;
+  // sessions are secure video for anyone located in Texas.
+  location: {
+    region: 'North Texas',
     state: 'TX',
-    zip: '76040',
-    areaServed: 'Bedford, Euless, and the greater DFW / North Texas area',
-    // Keyless Google Maps embed + a "get directions" link, both built from the address.
-    mapEmbedUrl:
-      'https://www.google.com/maps?q=425+Westpark+Way+Suite+202+Euless+TX+76040&output=embed',
-    directionsUrl:
-      'https://www.google.com/maps/dir/?api=1&destination=425+Westpark+Way+Suite+202+Euless+TX+76040',
+    areaServed: 'Telehealth across Texas',
   },
 
   hours: [
-    { days: 'Monday – Thursday', time: '8:00am – 5:00pm', note: 'In person & telehealth' },
-    { days: 'Friday', time: '7:00am – 1:00pm', note: 'Telehealth only' },
+    { days: 'Monday – Thursday', time: '8:00am – 5:00pm' },
+    { days: 'Friday', time: '7:00am – 1:00pm' },
   ],
 
   // Web3Forms public access key, injected from the PUBLIC_WEB3FORMS_KEY env var at build time.
@@ -215,9 +210,9 @@ export const faqs: Faq[] = [
       "It's a short, casual conversation, no paperwork or pressure. You can share what you're hoping to work on, ask me anything, and get a feel for how I work. If it feels like a match, we'll find a time to begin. If I'm not the right therapist for you, I'm glad to help point you somewhere that fits better.",
   },
   {
-    question: 'Do you meet in person or online?',
+    question: 'How do we meet for sessions?',
     answer:
-      "Both. I see clients in person at my office in Euless, and I also offer secure telehealth sessions to anyone located in Texas. Many people like to mix the two depending on their week. We'll figure out what works best for your life.",
+      "All of my sessions are secure online video (telehealth), available to anyone located in Texas. You can meet from wherever you're most comfortable, with no commute, and I'll make sure the technology is simple and easy. We'll find a rhythm that fits your life.",
   },
   {
     question: 'Who do you work with?',

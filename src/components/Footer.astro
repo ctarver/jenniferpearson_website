@@ -8,8 +8,8 @@ const year = new Date().getFullYear();
     <div class="sm:col-span-2 lg:col-span-2">
       <p class="font-serif text-xl font-bold text-ink-900">{site.name}</p>
       <p class="mt-2 max-w-sm text-sm text-ink-700">
-        {site.role} offering warm, affirming therapy for adults, in person in
-        {site.address.city}, {site.address.state}, and via telehealth across Texas.
+        {site.role} offering warm, affirming telehealth therapy for adults across
+        Texas, based in {site.location.region}.
       </p>
     </div>
 
@@ -42,8 +42,8 @@ const year = new Date().getFullYear();
         <li>
           <a href={`mailto:${site.email}`} class="no-underline hover:text-sage-700">{site.email}</a>
         </li>
-        <li>{site.address.line1}</li>
-        <li>{site.address.city}, {site.address.state} {site.address.zip}</li>
+        <li>{site.location.region}, {site.location.state}</li>
+        <li>Telehealth across Texas</li>
       </ul>
     </div>
   </div>

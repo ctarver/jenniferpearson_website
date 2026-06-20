@@ -49,22 +49,6 @@ const choice = 'inline-flex items-center gap-2 text-sm text-ink-800';
 
   <hr class="border-cream-200" />
 
-  <!-- Session format -->
-  <fieldset>
-    <legend class={legend}>How would you like to meet? <span class="text-alert-600">*</span></legend>
-    <div class="mt-2 flex flex-wrap gap-4">
-      <label class={choice}>
-        <input type="radio" name="session_format" value="In person (Euless office)" required /> In person
-      </label>
-      <label class={choice}>
-        <input type="radio" name="session_format" value="Telehealth" required /> Telehealth
-      </label>
-      <label class={choice}>
-        <input type="radio" name="session_format" value="Either is fine" required /> Either is fine
-      </label>
-    </div>
-  </fieldset>
-
   <!-- Payment -->
   <fieldset>
     <legend class={legend}>How are you planning to pay? <span class="text-alert-600">*</span></legend>

@@ -6,7 +6,7 @@ import { site } from '../data/site';
 
 <BaseLayout
   title="Contact & Request a Consultation"
-  description="Request a free consultation with Jennifer Pearson, LCSW. In-person therapy in Euless, TX and telehealth across Texas. Send a message or email to get started."
+  description="Request a free consultation with Jennifer Pearson, LCSW. Secure telehealth therapy across Texas, based in North Texas. Send a message or email to get started."
 >
   <section class="bg-cream-100">
     <div class="mx-auto max-w-6xl px-4 py-16 text-center">
@@ -41,26 +41,21 @@ import { site } from '../data/site';
             <a href={`mailto:${site.email}`} class="no-underline hover:text-sage-700">{site.email}</a>
           </li>
           <li>
-            <span class="block text-sm font-semibold text-ink-800">Office</span>
-            <span>{site.address.line1}</span><br />
-            <span>{site.address.city}, {site.address.state} {site.address.zip}</span>
-          </li>
-          <li>
             <span class="block text-sm font-semibold text-ink-800">Area served</span>
-            <span>{site.address.areaServed}, plus telehealth across Texas.</span>
+            <span>Telehealth across Texas, based in {site.location.region}.</span>
           </li>
         </ul>
       </div>
 
       <div class="mt-6 rounded-2xl border border-cream-200 bg-white p-6 shadow-sm">
-        <h2 class="text-xl text-sage-700">Office hours</h2>
+        <h2 class="text-xl text-sage-700">Availability</h2>
         <ul class="mt-4 space-y-3">
           {
             site.hours.map((h) => (
               <li>
                 <span class="block font-semibold text-ink-900">{h.days}</span>
                 <span class="text-ink-700">
-                  {h.time} &middot; {h.note}
+                  {h.time}
                 </span>
               </li>
             ))
@@ -80,34 +75,4 @@ import { site } from '../data/site';
     </aside>
   </section>
 
-  <!-- Office location map -->
-  <section class="mx-auto max-w-6xl px-4 pb-16">
-    <div class="overflow-hidden rounded-2xl border border-cream-200 bg-white shadow-sm">
-      <div class="flex flex-wrap items-center justify-between gap-2 px-6 py-4">
-        <div>
-          <h2 class="text-xl text-sage-700">Visit the office</h2>
-          <p class="text-sm text-ink-700">
-            {site.address.line1}, {site.address.city}, {site.address.state} {site.address.zip}
-          </p>
-        </div>
-        <a
-          href={site.address.directionsUrl}
-          target="_blank"
-          rel="noopener"
-          class="text-sm font-semibold text-sage-700 underline"
-        >
-          Get directions
-        </a>
-      </div>
-      <iframe
-        title={`Map showing the office at ${site.address.line1}, ${site.address.city}, ${site.address.state}`}
-        src={site.address.mapEmbedUrl}
-        width="100%"
-        height="380"
-        style="border:0; display:block;"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen></iframe>
-    </div>
-  </section>
 </BaseLayout>
