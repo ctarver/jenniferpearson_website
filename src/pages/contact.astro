@@ -6,7 +6,7 @@ import { site } from '../data/site';
 
 <BaseLayout
   title="Contact & Request a Consultation"
-  description="Request a free consultation with Jennifer Pearson, LCSW. Secure telehealth therapy across Texas, based in North Texas. Send a message or email to get started."
+  description="Request a free consultation with Jennifer Pearson, LCSW. Telehealth therapy across Texas, plus in-person sessions Wednesdays in Arlington, TX. Send a message or email to get started."
 >
   <section class="bg-cream-100">
     <div class="mx-auto max-w-6xl px-4 py-16 text-center">
@@ -42,7 +42,12 @@ import { site } from '../data/site';
           </li>
           <li>
             <span class="block text-sm font-semibold text-ink-800">Area served</span>
-            <span>Telehealth across Texas, based in {site.location.region}.</span>
+            <span>Telehealth across Texas.</span>
+          </li>
+          <li>
+            <span class="block text-sm font-semibold text-ink-800">In-person office ({site.location.inPersonDay})</span>
+            <span>{site.location.office.line1}</span><br />
+            <span>{site.location.office.city}, {site.location.office.state} {site.location.office.zip}</span>
           </li>
         </ul>
       </div>
@@ -61,6 +66,10 @@ import { site } from '../data/site';
             ))
           }
         </ul>
+        <p class="mt-4 text-sm text-ink-700">
+          In-person sessions are {site.location.inPersonDay} only, at the Arlington
+          office. All other times are telehealth.
+        </p>
       </div>
 
       <div class="mt-6 rounded-2xl bg-alert-700 p-6 text-cream-50">
@@ -75,4 +84,34 @@ import { site } from '../data/site';
     </aside>
   </section>
 
+  <!-- In-person office location map -->
+  <section class="mx-auto max-w-6xl px-4 pb-16">
+    <div class="overflow-hidden rounded-2xl border border-cream-200 bg-white shadow-sm">
+      <div class="flex flex-wrap items-center justify-between gap-2 px-6 py-4">
+        <div>
+          <h2 class="text-xl text-sage-700">In-person office ({site.location.inPersonDay})</h2>
+          <p class="text-sm text-ink-700">
+            {site.location.office.line1}, {site.location.office.city}, {site.location.office.state} {site.location.office.zip}
+          </p>
+        </div>
+        <a
+          href={site.location.office.directionsUrl}
+          target="_blank"
+          rel="noopener"
+          class="text-sm font-semibold text-sage-700 underline"
+        >
+          Get directions
+        </a>
+      </div>
+      <iframe
+        title={`Map showing the office at ${site.location.office.line1}, ${site.location.office.city}, ${site.location.office.state}`}
+        src={site.location.office.mapEmbedUrl}
+        width="100%"
+        height="380"
+        style="border:0; display:block;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+    </div>
+  </section>
 </BaseLayout>

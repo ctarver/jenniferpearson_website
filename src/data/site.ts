@@ -9,19 +9,31 @@ export const site = {
   licenseNumber: '67898',
   tagline: "This is hard. I'm glad you're here.",
   description:
-    'Warm, compassionate telehealth therapy for adults across Texas. Jennifer Pearson, LCSW, based in North Texas, offers secure online counseling for anxiety, depression, ADHD, burnout, grief, and life transitions.',
+    'Warm, compassionate therapy for adults across Texas. Jennifer Pearson, LCSW offers secure telehealth counseling statewide, plus in-person sessions on Wednesdays in Arlington, TX, for anxiety, depression, ADHD, burnout, grief, and life transitions.',
   url: 'https://jenniferpearsonlcsw.com',
 
   email: 'hello@jenniferpearsonlcsw.com',
   phone: '(817) 900-2251',
   phoneHref: 'tel:+18179002251',
 
-  // Telehealth-only practice: no public office address. North Texas is the home base;
-  // sessions are secure video for anyone located in Texas.
+  // Telehealth-primary practice across Texas, with in-person sessions on Wednesdays
+  // at the Arlington office.
   location: {
     region: 'North Texas',
     state: 'TX',
     areaServed: 'Telehealth across Texas',
+    inPersonDay: 'Wednesdays',
+    office: {
+      line1: '1112 E Copeland Rd, Ste 420',
+      city: 'Arlington',
+      state: 'TX',
+      zip: '76011',
+      // Keyless Google Maps embed + a "get directions" link, both built from the address.
+      mapEmbedUrl:
+        'https://www.google.com/maps?q=1112+E+Copeland+Rd+Ste+420+Arlington+TX+76011&output=embed',
+      directionsUrl:
+        'https://www.google.com/maps/dir/?api=1&destination=1112+E+Copeland+Rd+Ste+420+Arlington+TX+76011',
+    },
   },
 
   hours: [
@@ -212,7 +224,7 @@ export const faqs: Faq[] = [
   {
     question: 'How do we meet for sessions?',
     answer:
-      "All of my sessions are secure online video (telehealth), available to anyone located in Texas. You can meet from wherever you're most comfortable, with no commute, and I'll make sure the technology is simple and easy. We'll find a rhythm that fits your life.",
+      "Most of my sessions are secure online video (telehealth), available to anyone located in Texas, so you can meet from wherever you're most comfortable, with no commute. I also offer in-person sessions on Wednesdays at my Arlington office, if meeting face-to-face feels better for you. We'll find the mix and rhythm that fit your life.",
   },
   {
     question: 'Who do you work with?',

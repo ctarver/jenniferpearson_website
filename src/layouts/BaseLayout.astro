@@ -35,7 +35,10 @@ const jsonLd = {
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
-    addressRegion: site.location.state,
+    streetAddress: site.location.office.line1,
+    addressLocality: site.location.office.city,
+    addressRegion: site.location.office.state,
+    postalCode: site.location.office.zip,
     addressCountry: 'US',
   },
   areaServed: 'Texas',
