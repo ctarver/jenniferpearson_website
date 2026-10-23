@@ -26,8 +26,12 @@ export const site = {
 
   hours: [
     { days: 'Monday', time: 'Closed' },
-    { days: 'Tuesday – Thursday', time: '11:00am – 7:00pm' },
+    { days: 'Tuesday', time: '11:00am – 7:00pm' },
+    { days: 'Wednesday', time: '11:00am – 7:00pm' },
+    { days: 'Thursday', time: '11:00am – 7:00pm' },
     { days: 'Friday', time: '11:00am – 4:00pm' },
+    { days: 'Saturday', time: 'Closed' },
+    { days: 'Sunday', time: 'Closed' },
   ],
 
   // Web3Forms public access key, injected from the PUBLIC_WEB3FORMS_KEY env var at build time.

@@ -49,14 +49,11 @@ import { site } from '../data/site';
 
       <div class="mt-6 rounded-2xl border border-cream-200 bg-white p-6 shadow-sm">
         <h2 class="text-xl text-sage-700">Availability</h2>
-        <ul class="mt-4 space-y-3">
+        <ul class="mt-4 space-y-1.5 text-ink-700">
           {
             site.hours.map((h) => (
               <li>
-                <span class="block font-semibold text-ink-900">{h.days}</span>
-                <span class="text-ink-700">
-                  {h.time}
-                </span>
+                <span class="font-semibold text-ink-900">{h.days}:</span> {h.time}
               </li>
             ))
           }
