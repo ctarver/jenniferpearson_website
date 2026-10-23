@@ -6,37 +6,23 @@ import { site } from '../data/site';
 
 <BaseLayout
   title="Contact & Request a Consultation"
-  description="Request a free consultation with Jennifer Pearson, LCSW. Telehealth therapy across Texas, plus in-person sessions Wednesdays in Arlington, TX. Send a message or email to get started."
+  description="Request a free consultation with Jennifer Pearson, LCSW. Secure telehealth therapy across Texas, based in North Texas. Send a message or email to get started."
 >
   <section class="bg-cream-100">
     <div class="mx-auto max-w-6xl px-4 py-16 text-center">
       <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-sage-600">Contact</p>
       <h1 class="text-4xl sm:text-5xl">Let's connect</h1>
       <p class="mx-auto mt-5 max-w-2xl text-lg text-ink-700">
-        Reaching out can be the hardest part, and you've nearly done it. My practice is
-        currently full, but you're warmly welcome to join my waitlist below.
+        Reaching out can be the hardest part, and you've nearly done it. Send a note
+        below and I'll personally get back to you to find a time to talk.
       </p>
     </div>
   </section>
 
   <section class="mx-auto grid max-w-6xl gap-12 px-4 py-14 lg:grid-cols-5">
     <div class="lg:col-span-3">
-      <div class="rounded-2xl border border-periwinkle-300 bg-periwinkle-50 p-5">
-        <h2 class="text-lg font-semibold text-ink-900">My practice is currently full</h2>
-        <p class="mt-2 text-ink-700">
-          I'm not able to take on new clients right now, but you're warmly welcome to
-          join my waitlist. Fill out the form below and I'll reach out as soon as a spot
-          opens up, doing my best to give you a sense of timing. If you'd rather not
-          wait, I'm glad to help point you toward other therapists who may have
-          availability.
-        </p>
-      </div>
-      <h2 class="mt-8 text-2xl">Join the waitlist</h2>
-      <p class="mt-2 text-ink-700">
-        Tell me a little about what you're looking for, and I'll be in touch as soon as I
-        can offer a spot, including a free, no-pressure consultation to see if we're a
-        good fit.
-      </p>
+      <h2 class="text-2xl">Request a free consultation</h2>
+      <p class="mt-2 text-ink-700">A free, no-pressure consultation to see if we're a good fit.</p>
       <div class="mt-6">
         <ContactForm />
       </div>
@@ -56,12 +42,7 @@ import { site } from '../data/site';
           </li>
           <li>
             <span class="block text-sm font-semibold text-ink-800">Area served</span>
-            <span>Telehealth across Texas.</span>
-          </li>
-          <li>
-            <span class="block text-sm font-semibold text-ink-800">In-person office ({site.location.inPersonDay})</span>
-            <span>{site.location.office.line1}</span><br />
-            <span>{site.location.office.city}, {site.location.office.state} {site.location.office.zip}</span>
+            <span>Telehealth across Texas, based in {site.location.region}.</span>
           </li>
         </ul>
       </div>
@@ -80,10 +61,6 @@ import { site } from '../data/site';
             ))
           }
         </ul>
-        <p class="mt-4 text-sm text-ink-700">
-          In-person sessions are {site.location.inPersonDay} only, at the Arlington
-          office. All other times are telehealth.
-        </p>
       </div>
 
       <div class="mt-6 rounded-2xl bg-alert-700 p-6 text-cream-50">
@@ -98,34 +75,4 @@ import { site } from '../data/site';
     </aside>
   </section>
 
-  <!-- In-person office location map -->
-  <section class="mx-auto max-w-6xl px-4 pb-16">
-    <div class="overflow-hidden rounded-2xl border border-cream-200 bg-white shadow-sm">
-      <div class="flex flex-wrap items-center justify-between gap-2 px-6 py-4">
-        <div>
-          <h2 class="text-xl text-sage-700">In-person office ({site.location.inPersonDay})</h2>
-          <p class="text-sm text-ink-700">
-            {site.location.office.line1}, {site.location.office.city}, {site.location.office.state} {site.location.office.zip}
-          </p>
-        </div>
-        <a
-          href={site.location.office.directionsUrl}
-          target="_blank"
-          rel="noopener"
-          class="text-sm font-semibold text-sage-700 underline"
-        >
-          Get directions
-        </a>
-      </div>
-      <iframe
-        title={`Map showing the office at ${site.location.office.line1}, ${site.location.office.city}, ${site.location.office.state}`}
-        src={site.location.office.mapEmbedUrl}
-        width="100%"
-        height="380"
-        style="border:0; display:block;"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen></iframe>
-    </div>
-  </section>
 </BaseLayout>

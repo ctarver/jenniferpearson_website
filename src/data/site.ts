@@ -9,36 +9,25 @@ export const site = {
   licenseNumber: '67898',
   tagline: "This is hard. I'm glad you're here.",
   description:
-    'Warm, compassionate therapy for adults across Texas. Jennifer Pearson, LCSW offers secure telehealth counseling statewide, plus in-person sessions on Wednesdays in Arlington, TX, for anxiety, depression, ADHD, burnout, grief, and life transitions.',
+    'Warm, compassionate telehealth therapy for adults across Texas. Jennifer Pearson, LCSW, based in North Texas, offers secure online counseling for anxiety, depression, ADHD, burnout, grief, and life transitions.',
   url: 'https://jenniferpearsonlcsw.com',
 
   email: 'hello@jenniferpearsonlcsw.com',
   phone: '(817) 900-2251',
   phoneHref: 'tel:+18179002251',
 
-  // Telehealth-primary practice across Texas, with in-person sessions on Wednesdays
-  // at the Arlington office.
+  // Telehealth-only practice: no public office address. North Texas is the home base;
+  // sessions are secure video for anyone located in Texas.
   location: {
     region: 'North Texas',
     state: 'TX',
     areaServed: 'Telehealth across Texas',
-    inPersonDay: 'Wednesdays',
-    office: {
-      line1: '1112 E Copeland Rd, Ste 420',
-      city: 'Arlington',
-      state: 'TX',
-      zip: '76011',
-      // Keyless Google Maps embed + a "get directions" link, both built from the address.
-      mapEmbedUrl:
-        'https://www.google.com/maps?q=1112+E+Copeland+Rd+Ste+420+Arlington+TX+76011&output=embed',
-      directionsUrl:
-        'https://www.google.com/maps/dir/?api=1&destination=1112+E+Copeland+Rd+Ste+420+Arlington+TX+76011',
-    },
   },
 
   hours: [
-    { days: 'Monday – Thursday', time: '8:00am – 5:00pm' },
-    { days: 'Friday', time: '7:00am – 1:00pm' },
+    { days: 'Monday', time: 'Closed' },
+    { days: 'Tuesday – Thursday', time: '11:00am – 7:00pm' },
+    { days: 'Friday', time: '11:00am – 4:00pm' },
   ],
 
   // Web3Forms public access key, injected from the PUBLIC_WEB3FORMS_KEY env var at build time.
@@ -214,17 +203,17 @@ export const faqs: Faq[] = [
   {
     question: 'How do I get started?',
     answer:
-      "The easiest way is to fill out the contact form and tell me a little about what's bringing you in. My practice is currently full, so I'm adding new clients to my waitlist, I'll personally reach back out as soon as a spot opens up and do my best to give you a sense of timing. When there's room, we'll set up a free, no-pressure consultation to see whether we're a good fit. If you'd rather not wait, I'm glad to help point you toward other therapists who may have availability.",
+      "The easiest way is to fill out the contact form and tell me a little about what's bringing you in. I'll personally reach back out, usually within about two business days, to set up a free consultation. It's a relaxed, no-pressure conversation to see whether we're a good fit before you commit to anything.",
   },
   {
     question: 'What is the free consultation like?',
     answer:
-      "Once a spot opens up, we'll start with a short, casual conversation, no paperwork or pressure. You can share what you're hoping to work on, ask me anything, and get a feel for how I work. If it feels like a match, we'll find a time to begin. If I'm not the right therapist for you, I'm glad to help point you somewhere that fits better.",
+      "It's a short, casual conversation, no paperwork or pressure. You can share what you're hoping to work on, ask me anything, and get a feel for how I work. If it feels like a match, we'll find a time to begin. If I'm not the right therapist for you, I'm glad to help point you somewhere that fits better.",
   },
   {
     question: 'How do we meet for sessions?',
     answer:
-      "Most of my sessions are secure online video (telehealth), available to anyone located in Texas, so you can meet from wherever you're most comfortable, with no commute. I also offer in-person sessions on Wednesdays at my Arlington office, if meeting face-to-face feels better for you. We'll find the mix and rhythm that fit your life.",
+      "All of my sessions are secure online video (telehealth), available to anyone located in Texas. You can meet from wherever you're most comfortable, with no commute, and I'll make sure the technology is simple and easy. We'll find a rhythm that fits your life.",
   },
   {
     question: 'Who do you work with?',
